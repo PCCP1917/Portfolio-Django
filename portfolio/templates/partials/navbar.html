@@ -1,0 +1,25 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold fst-italics" href="/">Pablo Céspedes</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-disabled="true" href={% url 'blog:Post'%}>Blog</a>
+          </li>
+          <li class="nav-item d-flex align-items-center">
+            <a class="btn btn-primary btn-sm" aria-disabled="true" 
+            href={% static 'portfolio/CV_Pablo_Céspedes_Pérez.pdf' %} target="_blank">
+                Download CV
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
