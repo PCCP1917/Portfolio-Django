@@ -3,21 +3,35 @@
 {% block content %}
 {% load static %}
 
-<header>
+<header class="row bg-black">
     <div class="col-md-4">
-
+        <img src={% static 'portfolio/lenin.png'%} alt="" width=250>
+    </div>
+    <div class="col-md-8 my-auto">
+        <h1>I am <strong>Pablo Cespedes</strong></h1>
+        <h3>I'll be a Python Fullstack Developer</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ipsum aspernatur accusamus excepturi expedita. Id, ipsam consequatur laborum commodi pariatur suscipit dolorum fugit eaque aut, voluptate qui necessitatibus accusamus corporis labore. Nostrum quas temporibus explicabo tempora, eos placeat. Sunt molestiae, non omnis facere veniam distinctio adipisci. Ipsum illum incidunt doloribus tempora odio aperiam libero enim, magnam ducimus adipisci explicabo, repellendus qui inventore eveniet! Asperiores omnis aperiam distinctio nostrum quod odio quibusdam explicabo perferendis, velit, quaerat suscipit vero reprehenderit, incidunt error voluptatibus eveniet soluta in hic. Molestias aliquid veniam repellat repudiandae officia necessitatibus voluptatem eum, iusto ratione illum rem natus labore harum ducimus eveniet quaerat beatae quam, numquam repellendus magnam tempore delectus! Atque error soluta iure hic officiis eveniet repellendus quae id necessitatibus cumque, blanditiis deserunt porro saepe libero aliquam quasi itaque quibusdam accusamus sunt numquam asperiores ab! Labore reprehenderit nisi fuga, omnis iure aliquam vero quae laudantium, quas recusandae corporis perspiciatis eius sint iusto at. Dolore repellendus officia laudantium voluptate aperiam esse sint quam sequi consequatur nobis autem temporibus, laboriosam facere? Repellat, blanditiis aperiam amet excepturi eum totam in sequi! Nemo accusantium aliquid quas quia ipsa nam officia neque, unde fugiat? Sunt, laudantium modi. Tempore veritatis est illum sit? Cum.</p>
+        <a href={% static 'portfolio/CV_Pablo_Céspedes_Pérez.pdf' %} class="btn btn-primary btn-lg rounded-0 my-3">Descargar CV</a>
     </div>
 </header>
-<img src={% static 'portfolio/lenin.png'%} alt="">
-<h1>Home</h1>
+<div class="row my-4 text-center">
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, pariatur.</p>
+<h3>My Projects</h3>
 {%for project in projects%}
-<h2>{{project.title}}</h2>
-<p>{{project.description}}</p>
-<img src={{project.image.url}} alt="{{project.title}}">
+    <div class="col-md-4 pd-4">
+        <div class="card bg-black card-project">
+            <div class="card-body">
+                <h2>{{project.title}}</h2>
+                <p>{{project.description}}</p>
+                <img src={{project.image.url}} alt="{{project.title}}" width=250 class="img-fluid">
 
-{%if project.url%}
-<a href="{{project.url}}">{{project.url}}</a>
-{%endif%}
+                {%if project.url%}
+                <a href="{{project.url}}">{{project.url}}</a>
+                {%endif%}
+            </div>
+        </div>
+    </div>
 {% endfor %}
 
 {% endblock %}
+</div>
